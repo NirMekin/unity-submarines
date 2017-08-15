@@ -46,8 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DefinedVariables.cs" />
      <Compile Include="Assets\Scripts\SC_Controller.cs" />
-     <Compile Include="Assets\Scripts\SC_Menu.cs" />
+     <Compile Include="Assets\Scripts\SC_MenuLogic.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Nir Mekin/Documents/Unity/Submarines/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
