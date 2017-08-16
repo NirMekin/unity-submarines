@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 0f0134b382d6ad24dacc3de7a64e1489
+timeCreated: 1502902634
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SubmarineAnimation_0
+    21300002: SubmarineAnimation_1
+    21300004: SubmarineAnimation_2
+    21300006: SubmarineAnimation_3
+    21300008: SubmarineAnimation_4
+    21300010: SubmarineAnimation_5
+    21300012: SubmarineAnimation_6
+    21300014: SubmarineAnimation_7
+    21300016: SubmarineAnimation_8
+    21300018: SubmarineAnimation_9
+    21300020: SubmarineAnimation_10
+    21300022: SubmarineAnimation_11
+    21300024: SubmarineAnimation_12
+    21300026: SubmarineAnimation_13
+    21300028: SubmarineAnimation_14
+    21300030: SubmarineAnimation_15
+    21300032: SubmarineAnimation_16
+    21300034: SubmarineAnimation_17
+    21300036: SubmarineAnimation_18
+    21300038: SubmarineAnimation_19
+    21300040: SubmarineAnimation_20
+    21300042: SubmarineAnimation_21
+    21300044: SubmarineAnimation_22
+    21300046: SubmarineAnimation_23
+    21300048: SubmarineAnimation_24
+    21300050: SubmarineAnimation_25
+    21300052: SubmarineAnimation_26
+    21300054: SubmarineAnimation_27
+    21300056: SubmarineAnimation_28
+    21300058: SubmarineAnimation_29
+    21300060: SubmarineAnimation_30
+    21300062: SubmarineAnimation_31
+    21300064: SubmarineAnimation_32
+    21300066: SubmarineAnimation_33
+    21300068: SubmarineAnimation_34
+    21300070: SubmarineAnimation_35
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SubmarineAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 182
+        width: 95
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 183
+        width: 94
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 181
+        width: 95
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 182
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 99
+        width: 96
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 99
+        width: 97
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 99
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 99
+        width: 99
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 98
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 96
+        width: 98
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 96
+        width: 101
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 99
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_20
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 98
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_21
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 101
+        width: 97
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_22
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 100
+        width: 95
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_23
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 99
+        width: 95
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_24
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 99
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_25
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 12
+        width: 100
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_26
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 13
+        width: 96
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_27
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 14
+        width: 96
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_28
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 12
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_29
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 13
+        width: 99
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_30
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 14
+        width: 97
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_31
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 12
+        width: 97
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_32
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 12
+        width: 95
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_33
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 12
+        width: 95
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_34
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 13
+        width: 98
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SubmarineAnimation_35
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 13
+        width: 97
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: 654f00e19a13a8947ad4f8a56aa60488
-timeCreated: 1502465198
+guid: 4b932a7df00a4ea47a78365bf0a0c1cc
+timeCreated: 1502896826
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: wave_animation_0
-    21300002: wave_animation_1
-    21300004: wave_animation_2
-    21300006: wave_animation_3
-    21300008: wave_animation_4
+    21300000: LoadingCircle_0
+    21300002: LoadingCircle_1
+    21300004: LoadingCircle_2
+    21300006: LoadingCircle_3
+    21300008: LoadingCircle_4
+    21300010: LoadingCircle_5
+    21300012: LoadingCircle_6
+    21300014: LoadingCircle_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -45,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -83,65 +86,104 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wave_animation_0
+      name: LoadingCircle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 70
-        height: 70
+        x: 1
+        y: 1
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wave_animation_1
+      name: LoadingCircle_1
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 70
-        height: 70
+        x: 103
+        y: 1
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wave_animation_2
+      name: LoadingCircle_2
       rect:
         serializedVersion: 2
-        x: 140
-        y: 0
-        width: 70
-        height: 70
+        x: 205
+        y: 1
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wave_animation_3
+      name: LoadingCircle_3
       rect:
         serializedVersion: 2
-        x: 210
-        y: 0
-        width: 70
-        height: 70
+        x: 307
+        y: 1
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wave_animation_4
+      name: LoadingCircle_4
       rect:
         serializedVersion: 2
-        x: 280
-        y: 0
-        width: 70
-        height: 70
+        x: 409
+        y: 1
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LoadingCircle_5
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LoadingCircle_6
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 1
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LoadingCircle_7
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

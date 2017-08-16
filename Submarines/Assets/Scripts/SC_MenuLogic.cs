@@ -8,6 +8,8 @@ public class SC_MenuLogic : MonoBehaviour
     public Dictionary<string, GameObject> unityObjects;
     private DefinedVariables.MenuScreens currentScreen;
     private DefinedVariables.MenuScreens prevScreen;
+    // for second switch to return to main menu screen
+    private bool screenSwitched;
 
 
     static SC_MenuLogic instance;
@@ -35,12 +37,12 @@ public class SC_MenuLogic : MonoBehaviour
     {
         prevScreen = DefinedVariables.MenuScreens.Default;
         currentScreen = DefinedVariables.MenuScreens.Default;
+        screenSwitched = false;
 
         unityObjects = new Dictionary<string, GameObject>();
         GameObject[] _unityObjects = GameObject.FindGameObjectsWithTag("UnityObject");
         foreach (GameObject g in _unityObjects)
-        {
-            Debug.Log(g.name);
+        { 
             unityObjects.Add(g.name, g);
         }
 
@@ -56,14 +58,18 @@ public class SC_MenuLogic : MonoBehaviour
 
     public void Screen_Main_Btn_OptionsLogic()
     {
-        Debug.Log("Screen_Main_Btn_OptionsLogic");
         ChangeScreen(DefinedVariables.MenuScreens.Options);
     }
 
     public void Screen_Main_Btn_BackLogic()
     {
-        Debug.Log("Screen_Main_Btn_BackLogic");
+        if(screenSwitched)
+        {
+            prevScreen = DefinedVariables.MenuScreens.Main;
+            screenSwitched = false;
+        }
         ChangeScreen(prevScreen);
+        screenSwitched = true;
     }
 
     public void Screen_Main_Btn_MultiplayerLogic()
@@ -108,20 +114,23 @@ public class SC_MenuLogic : MonoBehaviour
 
     private void ChangeScreen(DefinedVariables.MenuScreens _ToScreen)
     {
-        Debug.Log(_ToScreen);
-           prevScreen = currentScreen;
-
-           switch (prevScreen)
-           {
-               case DefinedVariables.MenuScreens.Loading: unityObjects["Screen_Loading"].SetActive(false); break;
-               case DefinedVariables.MenuScreens.Main: unityObjects["Screen_Main"].SetActive(false); break;
-               case DefinedVariables.MenuScreens.Multiplayer: unityObjects["Screen_Multiplayer"].SetActive(false); break;
-               case DefinedVariables.MenuScreens.Options: unityObjects["Screen_Options"].SetActive(false); break;
-               case DefinedVariables.MenuScreens.SinglePlayer: break;
-               case DefinedVariables.MenuScreens.StudentInfo: unityObjects["Screen_Student_Info"].SetActive(false); break;
+       // Need to Check if we change to new screen
+        if(_ToScreen != currentScreen)
+        {
+            prevScreen = currentScreen;
+            screenSwitched = false;
+            switch (prevScreen)
+               {
+                   case DefinedVariables.MenuScreens.Loading: unityObjects["Screen_Loading"].SetActive(false); break;
+                   case DefinedVariables.MenuScreens.Main: unityObjects["Screen_Main"].SetActive(false); break;
+                   case DefinedVariables.MenuScreens.Multiplayer: unityObjects["Screen_Multiplayer"].SetActive(false); break;
+                   case DefinedVariables.MenuScreens.Options: unityObjects["Screen_Options"].SetActive(false); break;
+                   case DefinedVariables.MenuScreens.SinglePlayer: break;
+                   case DefinedVariables.MenuScreens.StudentInfo: unityObjects["Screen_Student_Info"].SetActive(false); break;
+            }
         }
 
-           currentScreen = _ToScreen;
+        currentScreen = _ToScreen;
 
            switch (currentScreen)
            {
