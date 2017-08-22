@@ -50,6 +50,12 @@ public class SC_Controller : MonoBehaviour
         float _value = SC_MenuLogic.Instance.unityObjects["Slider_Multiplayer"].GetComponent<Slider>().value;
         SC_MenuLogic.Instance.Screen_Multiplayer_Slider_MultiplayerLogic(_value);
     }
+
+    public void Board_Btn_Press(int _index)
+    {
+         Debug.Log("INDEX: " + _index);
+        SC_SinglePlayerLogic.Instance.Board_Btn_Press_Logic();
+    }
     
 
 

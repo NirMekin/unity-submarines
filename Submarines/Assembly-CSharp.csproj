@@ -48,9 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DefinedVariables.cs" />
      <Compile Include="Assets\Scripts\SC_Controller.cs" />
+     <Compile Include="Assets\Scripts\SC_Globals.cs" />
      <Compile Include="Assets\Scripts\SC_MenuLogic.cs" />
+     <Compile Include="Assets\Scripts\SC_SinglePlayerLogic.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Nir Mekin/Documents/Unity/Submarines/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/Or Adar/Desktop/Projects/Unity/Final Project/Unity_submarines_project-master/Unity_submarines_project-master/Submarines/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
