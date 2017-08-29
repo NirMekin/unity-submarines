@@ -8,6 +8,11 @@ public class GameEnums
         Occupied,Bombed,Free,Empty
     };
 
+    public enum Arrow
+    {
+        left,right,up,down
+    };
+
     public enum GameState
     {
         Winner

@@ -8,6 +8,7 @@ public class SC_Globals : MonoBehaviour
     public Dictionary<string, GameObject> mainBtnObjects;
     public Dictionary<string, GameObject> EnemyBtnObjects;
     public Dictionary<string, GameObject> SinglePlayerObjects;
+    public Dictionary<string, GameObject> shipObjects;
 
     #region Singleton
 
@@ -36,6 +37,13 @@ public class SC_Globals : MonoBehaviour
         foreach (GameObject g in _mainBtnObjects)
         {
             mainBtnObjects.Add(g.name, g);
+        }
+
+        shipObjects = new Dictionary<string, GameObject>();
+        GameObject[] _shipObjects = GameObject.FindGameObjectsWithTag("shipObject");
+        foreach (GameObject g in _shipObjects)
+        {
+            shipObjects.Add(g.name, g);
         }
 
         EnemyBtnObjects = new Dictionary<string, GameObject>();
