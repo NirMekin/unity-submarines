@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameEnums
+public class GameEnums : MonoBehaviour
 {
     public enum SlotState
     {
@@ -10,7 +10,7 @@ public class GameEnums
 
     public enum Arrow
     {
-        left,right,up,down
+        left,right,up,down,space,enter
     };
 
     public enum GameState

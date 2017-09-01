@@ -3,28 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SC_Control_Singleplayer : MonoBehaviour {
-
+    
     private int numberOfShips = 5;
+    public GameObject gShip;
     void Update()
     {
-        if (this.numberOfShips > 0)
+        if (Input.anyKeyDown & this.numberOfShips > 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                switch (this.numberOfShips)
-                {
-                    case 5:
-                        SC_SingleplayerLogic.Instance.moveShipVeritcal(SC_Globals.Instance.shipObjects["ship1"], GameEnums.Arrow.left);
-                        break;
-                }
-                Debug.Log("LeftArrow key was pressed");
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                this.numberOfShips--;
-                Debug.Log("space key was pressed");
-            }
+            moveShip(this.numberOfShips);
         }
         
     }
@@ -44,9 +30,46 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         SC_View.Instance.ShipSelector(shipName);
     }
 
-    //move to logic
-    public void moveShip()
+    public void moveShip(int shipObjectIndex)
     {
-        Debug.Log("TEST");
-    }
+        
+        switch (shipObjectIndex)
+        {
+            case 5: gShip = SC_Globals.Instance.shipObjects["ship1"]; break;
+            case 4: gShip = SC_Globals.Instance.shipObjects["ship2"]; break;
+            case 3: gShip = SC_Globals.Instance.shipObjects["ship3"]; break;
+            case 2: gShip = SC_Globals.Instance.shipObjects["ship4"]; break;
+            case 1: gShip = SC_Globals.Instance.shipObjects["ship5"]; break;
+            default: break;    
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+          SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.left);
+          Debug.Log("LeftArrow key was pressed");
+        }
+
+         if (Input.GetKeyDown(KeyCode.RightArrow))
+         {
+            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.right);
+            Debug.Log("RightArrow key was pressed");
+         }
+
+         if (Input.GetKeyDown(KeyCode.UpArrow))
+         {
+            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.up);
+            Debug.Log("UpArrow key was pressed");
+         }
+
+         if (Input.GetKeyDown(KeyCode.DownArrow))
+         {
+            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.down);
+            Debug.Log("DownArrow key was pressed");
+         }
+
+         if (Input.GetKeyDown(KeyCode.Space))
+         {
+            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.space);
+            Debug.Log("space key was pressed");
+         }
+       }
 }

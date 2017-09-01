@@ -18,8 +18,8 @@ public class SC_SingleplayerLogic : MonoBehaviour {
     }
 
     #endregion
-    //public int shipLength = 2;
-    public int currentButton = 46;
+    public int shipLength = 2;
+    public int currentButton = 56;
 
     void start()
     {
@@ -41,24 +41,62 @@ public class SC_SingleplayerLogic : MonoBehaviour {
         Debug.Log("Enemy Board Button Num " + _index + " Clicked");
     }
 
-  /*  public void Ship_btn_press_postion(GameObject g)
+
+    private Vector3 getButtonPosition(GameObject g)
     {
-        Vector2 btnShip = new Vector2(g.transform.position.x, g.transform.position.y);
-        Debug.Log(btnShip);
-    }*/
+        return g.transform.position;
+    }
 
     public void moveShipVeritcal(GameObject g, GameEnums.Arrow a)
     {
+        float screenWidth =  (float)Screen.width / 1024;
+        float screenHeight = (float)Screen.height / 768;
+        Debug.Log(screenHeight);
+        Vector3 tempHeight = getButtonPosition(SC_Globals.Instance.mainBtnObjects["Main_Btn (" + currentButton + ")"]);
         switch (a)
         {
             case GameEnums.Arrow.left:
                 if (currentButton % 10 != 9)
                 {
                     this.currentButton++;
-                    g.transform.position = new Vector3(g.transform.position.x - 36, g.transform.position.y, g.transform.position.z);
-                    
+                    g.transform.position = new Vector3(tempHeight.x + 15, g.transform.position.y, g.transform.position.z);
+
                 }
                 break;
+            case GameEnums.Arrow.right:
+                if(((currentButton % 10 ) + this.shipLength -1 ) > this.shipLength)
+                {
+                    this.currentButton--;
+                    g.transform.position = new Vector3(tempHeight.x + 15, g.transform.position.y, g.transform.position.z);
+                }
+                break;
+            case GameEnums.Arrow.up:
+                Debug.Log(this.currentButton);
+                if (currentButton > 10)
+                {
+                    this.currentButton -= 10;
+                    g.transform.position = new Vector3(g.transform.position.x, tempHeight.y, g.transform.position.z);
+                }
+                break;
+            case GameEnums.Arrow.down:
+                if (currentButton < 90)
+                {
+                    this.currentButton += 10;
+                    g.transform.position = new Vector3(g.transform.position.x, tempHeight.y, g.transform.position.z);
+                }
+                break;
+            case GameEnums.Arrow.space:
+                int i = 1;
+                if (g.transform.localEulerAngles.z >= (float)90)
+                    i = -1;
+                g.transform.localEulerAngles = new Vector3(0, 0, g.transform.localEulerAngles.z + 90*i);
+
+                if (currentButton >= 10 && currentButton <= 89)
+                {
+                    g.transform.position = new Vector3(tempHeight.x + 15, tempHeight.y, g.transform.position.z);
+                }
+                break;
+
         }
         Debug.Log(this.currentButton);
     }
