@@ -54,6 +54,7 @@ public class SC_MenuLogic : MonoBehaviour
     {
         Debug.Log("Screen_Main_Btn_SinglePlayerLogic");
         ChangeScreen(DefinedVariables.MenuScreens.Loading);
+        Application.LoadLevel(1);
     }
 
     public void Screen_Main_Btn_OptionsLogic()
@@ -158,6 +159,4 @@ public class SC_MenuLogic : MonoBehaviour
                 break;
         }
     }
-
-    
 }

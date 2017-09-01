@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 public class SC_Globals : MonoBehaviour
 {
-
     public Dictionary<string, GameObject> mainBtnObjects;
     public Dictionary<string, GameObject> EnemyBtnObjects;
     public Dictionary<string, GameObject> SinglePlayerObjects;
     public Dictionary<string, GameObject> shipObjects;
+    public int PlayerShips = 14;
+    public int EnemyShips = 14;
 
     #region Singleton
 

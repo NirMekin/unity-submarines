@@ -22,6 +22,9 @@ public class SC_View : MonoBehaviour {
     Color transparentColor = new Color(0,0,0,0);
     Color SelectedShip = new Color(255, 0, 0, 255);
     Color NotSelectedShip = new Color(255, 255, 255, 255);
+    Color LocatedShip = new Color(0, 255, 8, 255);
+    Color Heat = new Color(255, 0, 0, 255);
+    Color Miss = new Color(113, 113, 113, 255);
     void Start()
     {
         Init();
@@ -39,7 +42,7 @@ public class SC_View : MonoBehaviour {
             SC_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + i + ")"].GetComponent<Image>().color = transparentColor;
         }
 
-
+        setToInActive();
     }
 
     public void ShipSelector(string shipName)
@@ -64,5 +67,56 @@ public class SC_View : MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    public void ActivateBtn(GameObject g)
+    {
+        g.GetComponent<Image>().color = LocatedShip;
+    }
+
+    public void setToInActive()
+    {
+        for (int i = 5; i > 1; i--)
+        {
+            SC_Globals.Instance.shipObjects["ship" + i].SetActive(false);
+        }
+        SC_Globals.Instance.SinglePlayerObjects["Panel_EndGame"].SetActive(false);
+    }
+
+    public void markBtn(int index, string color)
+    {
+        switch (color)
+        {
+            case "red":
+                SC_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + index + ")"].GetComponent<Image>().color = Heat;
+                break;
+            case "gray":
+                SC_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + index + ")"].GetComponent<Image>().color = Miss;
+                break;
+        }
+    }
+
+    public void markPlayerBtn(int index, string color)
+    {
+        switch (color)
+        {
+            case "red":
+                SC_Globals.Instance.mainBtnObjects["Main_Btn (" + index + ")"].GetComponent<Image>().color = Heat;
+                break;
+            case "gray":
+                SC_Globals.Instance.mainBtnObjects["Main_Btn (" + index + ")"].GetComponent<Image>().color = Miss;
+                break;
+        }
+    }
+
+    public void changeStatusText(string txt)
+    {
+        SC_Globals.Instance.SinglePlayerObjects["Text_Status"].GetComponent<Text>().text = txt;
+    }
+
+   public void EndGame(string endGame)
+    {
+        SC_Globals.Instance.SinglePlayerObjects["Txt_EndGame"].GetComponent<Text>().text = endGame;
+        SC_Globals.Instance.SinglePlayerObjects["Panel_EndGame"].SetActive(true);
     }
 }
