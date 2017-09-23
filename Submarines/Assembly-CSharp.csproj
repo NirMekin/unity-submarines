@@ -63,7 +63,7 @@
      <Compile Include="Assets\Scripts\SinglePlayer_Scripts\SC_SingleplayerLogic.cs" />
      <Compile Include="Assets\Scripts\SinglePlayer_Scripts\SC_View.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Nir Mekin/Documents/Unity/gitSubmarines/Unity_submarines_project/Submarines/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/Or Adar/Desktop/Projects/Unity/Final Project/Unity_submarines_project/Submarines/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -87,7 +87,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="AppWarpUnity">
- <HintPath>C:/Users/Nir Mekin/Documents/Unity/gitSubmarines/Unity_submarines_project/Submarines/Assets/DLL/AppWarpUnity.dll</HintPath>
+ <HintPath>C:/Users/Or Adar/Desktop/Projects/Unity/Final Project/Unity_submarines_project/Submarines/Assets/DLL/AppWarpUnity.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
