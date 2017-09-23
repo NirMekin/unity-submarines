@@ -16,7 +16,7 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         {
             moveShip(this.numberOfShips);
         }
-        if (numberOfShips == 0)
+       /* if (numberOfShips == 0)
         {
             if (!whosTurn)
             {
@@ -25,6 +25,19 @@ public class SC_Control_Singleplayer : MonoBehaviour {
                 whosTurn = !whosTurn;
 
             }
+        }*/
+    }
+
+   private void stratPlay()
+    {
+        if (!whosTurn)
+        {
+            SC_View.Instance.changeStatusText("Computer's Turn");
+            StartCoroutine(Wait(2));
+        }
+        else
+        {
+            SC_View.Instance.changeStatusText("Your Turn");
         }
     }
 
@@ -33,6 +46,7 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         yield return new WaitForSeconds(duration);   //Wait
         SC_Computer.Instance.ComputerGuess();
         SC_View.Instance.changeStatusText("Your Turn");
+        whosTurn = !whosTurn;
     }
 
     public void Main_Board_Clicked(int Main_Board_index)
@@ -48,6 +62,7 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         {
             SC_SingleplayerLogic.Instance.EnemyBoard_Slot_Click(Enemy_Board_index);
             whosTurn = !whosTurn;
+            stratPlay();
         }
 
 
@@ -120,6 +135,10 @@ public class SC_Control_Singleplayer : MonoBehaviour {
                     case 2: SC_SingleplayerLogic.Instance.shipLength = 3; break;
                     case 1: SC_SingleplayerLogic.Instance.shipLength = 4; break;
                     default: break;
+                }
+                if (numberOfShips == 0)
+                {
+                    stratPlay();
                 }
             }
             
