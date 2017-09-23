@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +7,26 @@ using UnityEngine.UI;
 public class SC_Control_Singleplayer : MonoBehaviour {
 
     private int numberOfShips = 5;
-    private bool whosTurn = true;       //True = player turn False = Computer Turn
+    private bool whosTurn;       //True = player turn False = Computer Turn
     public GameObject gShip;
+
+    void Awake()
+    {
+        init();
+    }
+
+    private void init()
+    {
+        int whois = Random.Range(0, 2);
+        if (whois == 1)
+        {
+            whosTurn = true;
+            
+        }
+        else whosTurn = false;
+
+    }
+
     void Update()
     {
         if (Input.anyKeyDown & this.numberOfShips > 0)
@@ -18,13 +35,16 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         }
         if (numberOfShips == 0)
         {
+            
             if (!whosTurn)
             {
                 SC_View.Instance.changeStatusText("Computer's Turn");
-                StartCoroutine(Wait(2));
+                StartCoroutine(Wait((float)1.5));
                 whosTurn = !whosTurn;
-
             }
+
+
+
         }
     }
 
@@ -33,6 +53,7 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         yield return new WaitForSeconds(duration);   //Wait
         SC_Computer.Instance.ComputerGuess();
         SC_View.Instance.changeStatusText("Your Turn");
+        
     }
 
     public void Main_Board_Clicked(int Main_Board_index)
@@ -44,7 +65,7 @@ public class SC_Control_Singleplayer : MonoBehaviour {
     {
         Color transparentColor = new Color(0, 0, 0, 0);
         Color EnemyBtnColor = SC_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + Enemy_Board_index + ")"].GetComponent<Image>().color;
-        if (whosTurn && EnemyBtnColor == transparentColor)
+        if (whosTurn && (EnemyBtnColor == transparentColor))
         {
             SC_SingleplayerLogic.Instance.EnemyBoard_Slot_Click(Enemy_Board_index);
             whosTurn = !whosTurn;
@@ -64,10 +85,7 @@ public class SC_Control_Singleplayer : MonoBehaviour {
         switch (shipObjectIndex)
         {
             case 5: gShip = SC_Globals.Instance.shipObjects["ship1"]; break;
-            case 4: gShip = SC_Globals.Instance.shipObjects["ship2"];
-                Debug.Log("got in");
-
-                break;
+            case 4: gShip = SC_Globals.Instance.shipObjects["ship2"]; break;
             case 3: gShip = SC_Globals.Instance.shipObjects["ship3"]; break;
             case 2: gShip = SC_Globals.Instance.shipObjects["ship4"]; break;
             case 1: gShip = SC_Globals.Instance.shipObjects["ship5"]; break;
