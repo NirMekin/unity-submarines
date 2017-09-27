@@ -1,16 +1,123 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SC_Multiplayer_View : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    #region Singleton
+
+    static SC_Multiplayer_View instance;
+    public static SC_Multiplayer_View Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = GameObject.Find("SC_Multiplayer_View").GetComponent<SC_Multiplayer_View>();
+            return instance;
+        }
+    }
+
+    #endregion
+    Color transparentColor = new Color(0, 0, 0, 0);
+    Color SelectedShip = new Color(255, 0, 0, 255);
+    Color NotSelectedShip = new Color(255, 255, 255, 255);
+    Color LocatedShip = new Color(0, 255, 8, 255);
+    Color Heat = new Color(255, 0, 0, 255);
+    Color Miss = new Color(113, 113, 113, 255);
+    void Start()
+    {
+        Init();
+    }
+
+    public void Init()
+    {
+        for (int i = 0; i < SC_Multyplayer_Globals.Instance.mainBtnObjects.Count; i++)
+        {
+
+            SC_Multyplayer_Globals.Instance.mainBtnObjects["Main_Btn (" + i + ")"].GetComponent<Image>().color = transparentColor;
+        }
+        for (int i = 0; i < SC_Multyplayer_Globals.Instance.EnemyBtnObjects.Count; i++)
+        {
+            SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + i + ")"].GetComponent<Image>().color = transparentColor;
+        }
+
+        setToInActive();
+    }
+
+    public void ShipSelector(string shipName)
+    {
+        switch (shipName)
+        {
+            case "small":
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Small_Ship"].GetComponent<Image>().color = SelectedShip;
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Medium_Ship"].GetComponent<Image>().color = NotSelectedShip;
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Large_Ship"].GetComponent<Image>().color = NotSelectedShip;
+                break;
+            case "medium":
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Medium_Ship"].GetComponent<Image>().color = SelectedShip;
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Small_Ship"].GetComponent<Image>().color = NotSelectedShip;
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Large_Ship"].GetComponent<Image>().color = NotSelectedShip;
+                break;
+            case "large":
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Large_Ship"].GetComponent<Image>().color = SelectedShip;
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Small_Ship"].GetComponent<Image>().color = NotSelectedShip;
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Medium_Ship"].GetComponent<Image>().color = NotSelectedShip;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void ActivateBtn(GameObject g)
+    {
+        g.GetComponent<Image>().color = LocatedShip;
+    }
+
+    public void setToInActive()
+    {
+        Debug.Log("-----setToInActive------");
+        for (int i = 5; i > 1; i--)
+        {
+            SC_Multyplayer_Globals.Instance.shipObjects["ship" + i].SetActive(false);
+        }
+        SC_Multyplayer_Globals.Instance.MultiplayerObjects["Panel_EndGame"].SetActive(false);
+    }
+
+    public void markBtn(int index, string color)
+    {
+        switch (color)
+        {
+            case "red":
+                SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + index + ")"].GetComponent<Image>().color = Heat;
+                break;
+            case "gray":
+                SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + index + ")"].GetComponent<Image>().color = Miss;
+                break;
+        }
+    }
+
+    public void markPlayerBtn(int index, string color)
+    {
+        switch (color)
+        {
+            case "red":
+                SC_Multyplayer_Globals.Instance.mainBtnObjects["Main_Btn (" + index + ")"].GetComponent<Image>().color = Heat;
+                break;
+            case "gray":
+                SC_Multyplayer_Globals.Instance.mainBtnObjects["Main_Btn (" + index + ")"].GetComponent<Image>().color = Miss;
+                break;
+        }
+    }
+
+    public void changeStatusText(string txt)
+    {
+        SC_Multyplayer_Globals.Instance.MultiplayerObjects["Text_Status"].GetComponent<Text>().text = txt;
+    }
+
+    public void EndGame(string endGame)
+    {
+        SC_Multyplayer_Globals.Instance.MultiplayerObjects["Txt_EndGame"].GetComponent<Text>().text = endGame;
+        SC_Multyplayer_Globals.Instance.MultiplayerObjects["Panel_EndGame"].SetActive(true);
+    }
 }

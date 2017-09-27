@@ -11,7 +11,7 @@ public class SC_Multyplayer_Globals : MonoBehaviour {
 
     public Dictionary<string, GameObject> mainBtnObjects;
     public Dictionary<string, GameObject> EnemyBtnObjects;
-    public Dictionary<string, GameObject> SinglePlayerObjects;
+    public Dictionary<string, GameObject> MultiplayerObjects;
     public Dictionary<string, GameObject> shipObjects;
     public int PlayerShips = 14;
     public int EnemyShips = 14;
@@ -57,11 +57,12 @@ public class SC_Multyplayer_Globals : MonoBehaviour {
             EnemyBtnObjects.Add(g.name, g);
         }
 
-        SinglePlayerObjects = new Dictionary<string, GameObject>();
-        GameObject[] _SinglePlayerObjects = GameObject.FindGameObjectsWithTag("SinglePlayerObject");
-        foreach (GameObject g in _SinglePlayerObjects)
+        MultiplayerObjects = new Dictionary<string, GameObject>();
+        GameObject[] _multiplayerObject = GameObject.FindGameObjectsWithTag("multiplayerObject");
+        foreach (GameObject g in _multiplayerObject)
         {
-            SinglePlayerObjects.Add(g.name, g);
+            Debug.Log(g.name);
+            MultiplayerObjects.Add(g.name, g);
         }
     }
 }

@@ -2,298 +2,105 @@ Initialize engine version: 5.6.2f1 (a2913c821e27)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 840M (ID=0x1341)
+    Renderer: NVIDIA GeForce 940MX (ID=0x134d)
     Vendor:   NVIDIA
-    VRAM:     2020 MB
-    Driver:   22.21.13.8205
+    VRAM:     2019 MB
+    Driver:   21.21.13.6909
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.134 seconds
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Nir Mekin\Documents\Unity\gitSubmarines\Unity_submarines_project\Submarines\Game_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\AppWarpUnity.dll (this message is harmless)
+Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\AppWarpUnity.dll into Unity Child Domain
+- Completed reload, in  0.098 seconds
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 4.044691 ms
-Screen_Main_Btn_SinglePlayerLogic
+UnloadTime: 0.938667 ms
+Large_Ship
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 9.284710 ms
-
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 1418.
-Total: 19.457230 ms (FindLiveObjects: 0.301595 ms CreateObjectMapping: 0.219090 ms MarkObjects: 18.047155 ms  DeleteObjects: 0.887416 ms)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-enter key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-got in
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UpArrow key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-got in
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 46
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-enter key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DownArrow key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 66
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-enter key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UpArrow key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 46
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-46
+Medium_Ship_Text
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-UpArrow key was pressed
+Small_Ship
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-1
+Large_Ship_Text
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-the current button is 36
+Medium_Ship
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-enter key was pressed
+Small_Ship_Text
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-1
+Panel_EndGame
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-the current button is 56
+Text_Status
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-56
+-----setToInActive------
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-UpArrow key was pressed
+636421282786704691
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-1
+connecting...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-the current button is 46
+ClientChannel Connect
+Sign
+SortAndConvertTableToString
+apiKey
+apiKey74df4261032276bc2f763ae5bc02ea4825848108339489a7aa901605c5044e7ftimeStamp1506531480user636421282786704691versionWP_1.10
+ComputeHmac
+signature: aNT9R9Mb97kIc4Vg2Lsfvwr08Xc=
+value: aNT9R9Mb97kIc4Vg2Lsfvwr08Xc%3D
+Connected!
+OnConnect: True
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-46
+OnRoomsInRange: True com.shephertz.app42.gaming.multiplayer.client.events.RoomData[]
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-UpArrow key was pressed
+No rooms were availible, create a room
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-1
+OnCreateRoom True 1693537733
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-the current button is 36
+onSubscribeRoomDone : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-36
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UpArrow key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the current button is 26
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-enter key was pressed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 31
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 21
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 50
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 48
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 87
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 94
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 73
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 61
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 96
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 54
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 45
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 69
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 46
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 56
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 46
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 11
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 80
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-computer guess 92
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.614804 ms
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 509.
-Total: 1.645351 ms (FindLiveObjects: 0.120006 ms CreateObjectMapping: 0.100663 ms MarkObjects: 1.356388 ms  DeleteObjects: 0.066714 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1944 -> priority: 1 
-  Thread -> id: 1594 -> priority: 1 
+  Thread -> id: 1ce4 -> priority: 1 
+  Thread -> id: 4b4 -> priority: 1 

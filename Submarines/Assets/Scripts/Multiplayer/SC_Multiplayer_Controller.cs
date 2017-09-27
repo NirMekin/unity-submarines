@@ -23,16 +23,16 @@ public class SC_Multiplayer_Controller : MonoBehaviour
 
     public void Main_Board_Clicked(int Main_Board_index)
     {
-        SC_SingleplayerLogic.Instance.MainBoard_Slot_Click(Main_Board_index);
+        SC_MultiplayerLogic.Instance.MainBoard_Slot_Click(Main_Board_index);
     }
 
     public void Enemy_Board_Clicked(int Enemy_Board_index)
     {
         Color transparentColor = new Color(0, 0, 0, 0);
-        Color EnemyBtnColor = SC_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + Enemy_Board_index + ")"].GetComponent<Image>().color;
+        Color EnemyBtnColor = SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + Enemy_Board_index + ")"].GetComponent<Image>().color;
         if (whosTurn && EnemyBtnColor == transparentColor)
         {
-            SC_SingleplayerLogic.Instance.EnemyBoard_Slot_Click(Enemy_Board_index);
+            SC_MultiplayerLogic.Instance.EnemyBoard_Slot_Click(Enemy_Board_index);
             whosTurn = !whosTurn;
         }
 
@@ -41,7 +41,7 @@ public class SC_Multiplayer_Controller : MonoBehaviour
 
     public void Ship_Select(string shipName)
     {
-        SC_View.Instance.ShipSelector(shipName);
+        SC_Multiplayer_View.Instance.ShipSelector(shipName);
     }
 
     public void moveShip(int shipObjectIndex)
@@ -49,63 +49,63 @@ public class SC_Multiplayer_Controller : MonoBehaviour
 
         switch (shipObjectIndex)
         {
-            case 5: gShip = SC_Globals.Instance.shipObjects["ship1"]; break;
+            case 5: gShip = SC_Multyplayer_Globals.Instance.shipObjects["ship1"]; break;
             case 4:
-                gShip = SC_Globals.Instance.shipObjects["ship2"];
+                gShip = SC_Multyplayer_Globals.Instance.shipObjects["ship2"];
                 Debug.Log("got in");
 
                 break;
-            case 3: gShip = SC_Globals.Instance.shipObjects["ship3"]; break;
-            case 2: gShip = SC_Globals.Instance.shipObjects["ship4"]; break;
-            case 1: gShip = SC_Globals.Instance.shipObjects["ship5"]; break;
+            case 3: gShip = SC_Multyplayer_Globals.Instance.shipObjects["ship3"]; break;
+            case 2: gShip = SC_Multyplayer_Globals.Instance.shipObjects["ship4"]; break;
+            case 1: gShip = SC_Multyplayer_Globals.Instance.shipObjects["ship5"]; break;
             default: break;
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.left);
+            SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.left);
             Debug.Log("LeftArrow key was pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.right);
+            SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.right);
             Debug.Log("RightArrow key was pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.up);
+            SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.up);
             Debug.Log("UpArrow key was pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.down);
+            SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.down);
             Debug.Log("DownArrow key was pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.space);
+            SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.space);
             Debug.Log("space key was pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            if (SC_SingleplayerLogic.Instance.isValidSlot(gShip))
+            if (SC_MultiplayerLogic.Instance.isValidSlot(gShip))
             {
-                SC_SingleplayerLogic.Instance.moveShipVeritcal(gShip, GameEnums.Arrow.enter);
+                SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.enter);
                 numberOfShips--;
                 if (numberOfShips > 0)
                 {
-                    SC_Globals.Instance.shipObjects["ship" + (5 - numberOfShips + 1)].SetActive(true);
+                    SC_Multyplayer_Globals.Instance.shipObjects["ship" + (5 - numberOfShips + 1)].SetActive(true);
                 }
                 switch (numberOfShips)
                 {
-                    case 4: SC_SingleplayerLogic.Instance.shipLength = 2; break;
-                    case 3: SC_SingleplayerLogic.Instance.shipLength = 3; break;
-                    case 2: SC_SingleplayerLogic.Instance.shipLength = 3; break;
-                    case 1: SC_SingleplayerLogic.Instance.shipLength = 4; break;
+                    case 4: SC_MultiplayerLogic.Instance.shipLength = 2; break;
+                    case 3: SC_MultiplayerLogic.Instance.shipLength = 3; break;
+                    case 2: SC_MultiplayerLogic.Instance.shipLength = 3; break;
+                    case 1: SC_MultiplayerLogic.Instance.shipLength = 4; break;
                     default: break;
                 }
             }
