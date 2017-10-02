@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+using com.shephertz.app42.gaming.multiplayer.client;
+using AssemblyCSharp;
 using UnityEngine.UI;
+using com.shephertz.app42.gaming.multiplayer.client.events;
+using System.Collections.Generic;
+using System;
 
 public class SC_MenuLogic : MonoBehaviour
 {
@@ -57,6 +61,18 @@ public class SC_MenuLogic : MonoBehaviour
         Application.LoadLevel(1);
     }
 
+    public void Screen_Multiplayer_Btn_MultiplayerPlayLogic()
+    {
+        Debug.Log("Going to multiplayer");
+        ChangeScreen(DefinedVariables.MenuScreens.Loading);
+        string _value = this.unityObjects["Text_MultiplayerNum"].GetComponent<Text>().text;
+        Debug.Log("_value: " + _value);
+        RoomLevel.roomLevel = _value;
+        Application.LoadLevel(2); 
+
+
+    }
+
     public void Screen_Main_Btn_OptionsLogic()
     {
         ChangeScreen(DefinedVariables.MenuScreens.Options);
@@ -99,9 +115,9 @@ public class SC_MenuLogic : MonoBehaviour
          unityObjects["Text_SFXNum"].GetComponent<Text>().text = _Value.ToString();
     }
 
-    public void Screen_Multiplayer_Slider_MultiplayerLogic(float _Value)
+    public void Screen_Multiplayer_Slider_MultiplayerLogic(string _Value)
     {
-        unityObjects["Text_MultiplayerNum"].GetComponent<Text>().text = _Value.ToString() + "$";
+        unityObjects["Text_MultiplayerNum"].GetComponent<Text>().text = _Value.ToString();
     }
 
     private void DeactivateScreens()

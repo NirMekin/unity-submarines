@@ -31,9 +31,10 @@ public class SC_MultiplayerLogic : MonoBehaviour {
         Listener.OnRoomsInRange += OnRoomsInRange;
         Listener.OnCreateRoom += OnCreateRoom;
         Listener.OnGetLiveRoomInfo += OnGetLiveRoomInfo;
+        Listener.OnDisconnect += OnDisconnect;
+       
     }
 
-    
 
     void OnDisable()
     {
@@ -41,6 +42,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
         Listener.OnRoomsInRange -= OnRoomsInRange;
         Listener.OnCreateRoom -= OnCreateRoom;
         Listener.OnGetLiveRoomInfo -= OnGetLiveRoomInfo;
+        Listener.OnDisconnect -= OnDisconnect;
     }
 
    
@@ -52,7 +54,6 @@ public class SC_MultiplayerLogic : MonoBehaviour {
 
     public void init()
     {
-
         WarpClient.initialize(DefinedVariabels.apiKey, DefinedVariabels.secretKey);
         WarpClient.GetInstance().AddConnectionRequestListener(SC_Multyplayer_Globals.listener);
         WarpClient.GetInstance().AddChatRequestListener(SC_Multyplayer_Globals.listener);
@@ -62,6 +63,8 @@ public class SC_MultiplayerLogic : MonoBehaviour {
         WarpClient.GetInstance().AddRoomRequestListener(SC_Multyplayer_Globals.listener);
         WarpClient.GetInstance().AddZoneRequestListener(SC_Multyplayer_Globals.listener);
         WarpClient.GetInstance().AddTurnBasedRoomRequestListener(SC_Multyplayer_Globals.listener);
+        
+
 
         SC_Multyplayer_Globals.userName = System.DateTime.UtcNow.Ticks.ToString();
         Debug.Log(SC_Multyplayer_Globals.userName);
@@ -72,6 +75,12 @@ public class SC_MultiplayerLogic : MonoBehaviour {
     {
         Debug.Log("OnConnect: " + _IsSuccess);
         WarpClient.GetInstance().GetRoomsInRange(1, 2);
+    }
+
+    public void OnDisconnect(bool _IsSuccess)
+    {
+        Debug.Log("Dissconnect from server" + _IsSuccess);
+        WarpClient.GetInstance().Disconnect();
     }
     public void OnRoomsInRange(bool _IsSuccess, MatchedRoomsEvent eventObj)
     {
@@ -85,15 +94,18 @@ public class SC_MultiplayerLogic : MonoBehaviour {
                 Debug.Log("Getting Live info on room " + roomData.getId());
                 Debug.Log("Room Owner " + roomData.getRoomOwner());
                 Debug.Log("Room Name" + roomData.getName());
-                if(roomData.getName().Contains("Easy"))
+                if(roomData.getName().Contains(RoomLevel.roomLevel))
                 {
-                    Debug.Log("Found room for my level~~");
+                    Debug.Log("Found room for my level" + RoomLevel.roomLevel);
                     rooms.Add(roomData.getId());
                 }
                
             }
 
             int index = 0;
+            Debug.Log("------------");
+            Debug.Log("rooms.Count " + rooms.Count);
+            Debug.Log("------------");
             if (index < rooms.Count)
             {
                 Debug.Log("Getting Live Info on room: " + rooms[index]);
@@ -101,8 +113,8 @@ public class SC_MultiplayerLogic : MonoBehaviour {
             }
             else
             {
-                Debug.Log("No rooms were availible, create a room");
-                WarpClient.GetInstance().CreateTurnRoom("Room " + DateTime.UtcNow.ToString()+ " Easy", SC_Multyplayer_Globals.userName, 2, null, 60);
+                Debug.Log("No rooms were availible, create a room "+RoomLevel.roomLevel);
+                WarpClient.GetInstance().CreateTurnRoom("Room " + DateTime.UtcNow.ToString()+ " " + RoomLevel.roomLevel, SC_Multyplayer_Globals.userName, 2, null, 60);
             }
         }
        // else GameObject.Find("Btn_Play").GetComponent<Button>().interactable = true;

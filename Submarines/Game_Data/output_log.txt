@@ -19,7 +19,7 @@ Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_s
 Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\AppWarpUnity.dll (this message is harmless)
 Loading C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\AppWarpUnity.dll into Unity Child Domain
-- Completed reload, in  0.098 seconds
+- Completed reload, in  0.023 seconds
 Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Or Adar\Desktop\Projects\Unity\Final Project\Unity_submarines_project\Submarines\Game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -27,7 +27,17 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.938667 ms
+UnloadTime: 2.087140 ms
+Going to multiplayer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+_value: EASY
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.685004 ms
 Large_Ship
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -60,11 +70,15 @@ Text_Status
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 1425.
+Total: 1.723239 ms (FindLiveObjects: 0.100495 ms CreateObjectMapping: 0.058887 ms MarkObjects: 1.449961 ms  DeleteObjects: 0.113190 ms)
+
 -----setToInActive------
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-636421282786704691
+636425646404564440
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -76,10 +90,10 @@ ClientChannel Connect
 Sign
 SortAndConvertTableToString
 apiKey
-apiKey74df4261032276bc2f763ae5bc02ea4825848108339489a7aa901605c5044e7ftimeStamp1506531480user636421282786704691versionWP_1.10
+apiKey74df4261032276bc2f763ae5bc02ea4825848108339489a7aa901605c5044e7ftimeStamp1506967842user636425646404564440versionWP_1.10
 ComputeHmac
-signature: aNT9R9Mb97kIc4Vg2Lsfvwr08Xc=
-value: aNT9R9Mb97kIc4Vg2Lsfvwr08Xc%3D
+signature: okSws4jOsr3ac8zuCbRHMZHc5vo=
+value: okSws4jOsr3ac8zuCbRHMZHc5vo%3D
 Connected!
 OnConnect: True
  
@@ -89,11 +103,23 @@ OnRoomsInRange: True com.shephertz.app42.gaming.multiplayer.client.events.RoomDa
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-No rooms were availible, create a room
+------------
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-OnCreateRoom True 1693537733
+rooms.Count 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+------------
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No rooms were availible, create a room EASY
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnCreateRoom True 1112264520
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -102,5 +128,5 @@ onSubscribeRoomDone : 0
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1ce4 -> priority: 1 
-  Thread -> id: 4b4 -> priority: 1 
+  Thread -> id: 13d48 -> priority: 1 
+  Thread -> id: 1372c -> priority: 1 

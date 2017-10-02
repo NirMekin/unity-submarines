@@ -9,4 +9,6 @@ public class DefinedVariabels
     public static string secretKey = "fa3bc34a53b0db098deb4113802ee30ca75eb8e9658233601df8d175b99767b4";
 
     public static int SlotAmount = 100;
+
+    public static string roomLevel = "EASY";
 }
