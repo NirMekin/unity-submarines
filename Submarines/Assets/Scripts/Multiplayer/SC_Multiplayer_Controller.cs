@@ -9,7 +9,7 @@ public class SC_Multiplayer_Controller : MonoBehaviour
 {
 
     private int numberOfShips = 5;
-    private bool whosTurn = true;       //True = player turn False = Computer Turn
+   // private bool whosTurn = true;       //True = player turn False = Computer Turn
     public GameObject gShip;
     void Update()
     {
@@ -28,12 +28,12 @@ public class SC_Multiplayer_Controller : MonoBehaviour
 
     public void Enemy_Board_Clicked(int Enemy_Board_index)
     {
+
         Color transparentColor = new Color(0, 0, 0, 0);
         Color EnemyBtnColor = SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + Enemy_Board_index + ")"].GetComponent<Image>().color;
-        if (whosTurn && EnemyBtnColor == transparentColor)
+        if (SC_MultiplayerLogic.Instance.myTurn && EnemyBtnColor == transparentColor)
         {
             SC_MultiplayerLogic.Instance.EnemyBoard_Slot_Click(Enemy_Board_index);
-            whosTurn = !whosTurn;
         }
 
 
@@ -109,7 +109,10 @@ public class SC_Multiplayer_Controller : MonoBehaviour
                     default: break;
                 }
             }
-
+            if (numberOfShips == 0) {
+                SC_MultiplayerLogic.Instance.statusStartGame();
+            }
+             
             Debug.Log("enter key was pressed");
         }
     }

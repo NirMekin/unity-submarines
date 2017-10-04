@@ -14,7 +14,6 @@ public class SC_Multyplayer_Globals : MonoBehaviour {
     public Dictionary<string, GameObject> MultiplayerObjects;
     public Dictionary<string, GameObject> shipObjects;
     public int PlayerShips = 14;
-    public int EnemyShips = 14;
 
     static SC_Multyplayer_Globals instance;
     public static SC_Multyplayer_Globals Instance

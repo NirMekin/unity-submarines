@@ -322,14 +322,8 @@ namespace AssemblyCSharp
 		
 		public void onChatReceived (ChatEvent eventObj)
 		{
-			Debug.Log(eventObj.getSender() + " sended " + eventObj.getMessage());
-			com.shephertz.app42.gaming.multiplayer.client.SimpleJSON.JSONNode msg =  com.shephertz.app42.gaming.multiplayer.client.SimpleJSON.JSON.Parse(eventObj.getMessage());
-			//msg[0] 
-//			if(eventObj.getSender() != appwarp.username)
-//			{
-//				//Log(msg["x"].ToString()+" "+msg["y"].ToString()+" "+msg["z"].ToString());
-//			}
-		}
+            SC_MultiplayerLogic.Instance.onChatReceivedAck(eventObj);   
+        }
 		
 		public void onUpdatePeersReceived (UpdateEvent eventObj)
 		{
@@ -380,13 +374,14 @@ namespace AssemblyCSharp
 		//TurnBasedRoomListener
 		#region TurnBasedRoomListener
 		public void onSendMoveDone(byte result)
-		{   
+		{
 			if (OnSendMoveAck != null)
 				OnSendMoveAck();
 		}
 		
 		public void onStartGameDone(byte result)
-		{        
+		{
+            Debug.Log("Game Started Test !!");   
 			if (OnStartGameAck != null)
 				OnStartGameAck();
 		}
