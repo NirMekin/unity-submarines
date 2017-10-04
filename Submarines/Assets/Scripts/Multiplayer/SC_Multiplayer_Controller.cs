@@ -85,9 +85,9 @@ public class SC_Multiplayer_Controller : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
+        {  
             if (SC_MultiplayerLogic.Instance.isValidSlot(gShip))
-            {
+            { 
                 SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.enter);
                 SC_Multyplayer_Globals.Instance.numberOfShips--;
                 if (SC_Multyplayer_Globals.Instance.numberOfShips > 0)

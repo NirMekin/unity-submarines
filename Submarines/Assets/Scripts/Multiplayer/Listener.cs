@@ -322,7 +322,7 @@ namespace AssemblyCSharp
 		
 		public void onChatReceived (ChatEvent eventObj)
 		{
-            
+             
         }
 		
 		public void onUpdatePeersReceived (UpdateEvent eventObj)

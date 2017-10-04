@@ -111,11 +111,11 @@ public class SC_SingleplayerLogic : MonoBehaviour {
             case GameEnums.Arrow.up:
                 Debug.Log(this.currentButton);
                 if (currentButton >= 10)
-                {
+                { 
                     currentButton -= 10;
                     previousButton -= 10;
                     if (g.transform.localEulerAngles.z == 0)
-                    {
+                    { 
                         tempHeight = getButtonPosition(SC_Globals.Instance.mainBtnObjects["Main_Btn (" + currentButton + ")"]);
                         g.transform.position = new Vector3(g.transform.position.x, tempHeight.y, g.transform.position.z);
                     }else

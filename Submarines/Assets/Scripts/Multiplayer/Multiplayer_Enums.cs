@@ -13,7 +13,7 @@ public class Multiplayer_Enums : MonoBehaviour {
         left, right, up, down, space, enter
     };
 
-    public enum GameState
+    public enum GameState 
     {
         Winner
     };

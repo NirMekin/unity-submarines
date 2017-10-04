@@ -55,7 +55,7 @@ public class SC_Computer : MonoBehaviour {
         computerMatrix[0, 3] = 1;
 
     }
-
+     
 	public bool IsHeat(int i,int j)
     {
         if (computerMatrix[i,j] == 1)

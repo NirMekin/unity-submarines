@@ -339,8 +339,8 @@ public class SC_MultiplayerLogic : MonoBehaviour {
         float screenHeight = (float)Screen.height / 768;
         Vector3 tempHeight;
         switch (a)
-        {
-            case Multiplayer_Enums.Arrow.left:
+        { 
+            case Multiplayer_Enums.Arrow.left: 
                 if (currentButton % 10 != 9)
                 {
                     currentButton++;

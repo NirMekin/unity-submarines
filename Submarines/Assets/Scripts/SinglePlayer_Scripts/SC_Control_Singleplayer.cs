@@ -155,7 +155,7 @@ public class SC_Control_Singleplayer : MonoBehaviour
     public void Exit()
     {
         Application.LoadLevel(0);
-    }
+    } 
 
 
 
