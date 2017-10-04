@@ -30,14 +30,13 @@ public class SC_MultiplayerLogic : MonoBehaviour {
     public bool isOwner = false;
     public bool[] getStatusShipsReady = new bool[] { false, false };
     msgJson temp = new msgJson();
-    
+    bool isHit;
 
     void OnEnable()
     {
         
         Listener.OnConnect += OnConnect;
         Listener.OnRoomsInRange += OnRoomsInRange;
-        Listener.OnSendMoveAck += OnSendMoveAck;
         Listener.OnMoveCompleted += OnMoveCompleted;
         Listener.OnCreateRoom += OnCreateRoom;
         Listener.OnGetLiveRoomInfo += OnGetLiveRoomInfo;
@@ -53,7 +52,6 @@ public class SC_MultiplayerLogic : MonoBehaviour {
     {
         Listener.OnConnect -= OnConnect;
         Listener.OnRoomsInRange -= OnRoomsInRange;
-        Listener.OnSendMoveAck -= OnSendMoveAck;
         Listener.OnCreateRoom -= OnCreateRoom;
         Listener.OnJoinRoom -= OnJoinRoom;
         Listener.OnMoveCompleted -= OnMoveCompleted;
@@ -71,9 +69,9 @@ public class SC_MultiplayerLogic : MonoBehaviour {
 
     public void init()
     {
+        SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "";
         WarpClient.initialize(DefinedVariabels.apiKey, DefinedVariabels.secretKey);
         WarpClient.GetInstance().AddConnectionRequestListener(SC_Multyplayer_Globals.listener);
-        WarpClient.GetInstance().AddChatRequestListener(SC_Multyplayer_Globals.listener);
         WarpClient.GetInstance().AddUpdateRequestListener(SC_Multyplayer_Globals.listener);
         WarpClient.GetInstance().AddLobbyRequestListener(SC_Multyplayer_Globals.listener);
         WarpClient.GetInstance().AddNotificationListener(SC_Multyplayer_Globals.listener);
@@ -113,7 +111,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
                 if(roomData.getName().Contains(RoomLevel.roomLevel))
                 {
                     Debug.Log("Found room for my level" + RoomLevel.roomLevel);
-                    
+                    SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Locate Your Ships";
                     WarpClient.GetInstance().startGame();
                     rooms.Add(roomData.getId());
                 }
@@ -121,9 +119,6 @@ public class SC_MultiplayerLogic : MonoBehaviour {
             }
 
             int index = 0;
-            Debug.Log("------------");
-            Debug.Log("rooms.Count " + rooms.Count);
-            Debug.Log("------------");
             if (index < rooms.Count)
             {
                 Debug.Log("Getting Live Info on room: " + rooms[index]);
@@ -133,6 +128,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
             {
                 Debug.Log("No rooms were availible, create a room "+RoomLevel.roomLevel);
                 isOwner = true;
+                myTurn = true;
                 WarpClient.GetInstance().CreateTurnRoom("Room " + DateTime.UtcNow.ToString()+ " " + RoomLevel.roomLevel, SC_Multyplayer_Globals.userName, 2, null, 60);
             }
         }
@@ -162,13 +158,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
             WarpClient.GetInstance().SubscribeRoom(_RoomId);
             if (!isOwner)
                 SC_Multyplayer_Globals.Instance.MultiplayerObjects["Screen_Loading"].SetActive(false);
-            WarpClient.GetInstance().SendChat("Hey how are you?");
         }
-    }
-    public void onChatReceivedAck(ChatEvent eventObj)
-    {
-        Debug.Log(eventObj.getSender() + " sended " + eventObj.getMessage());
-        com.shephertz.app42.gaming.multiplayer.client.SimpleJSON.JSONNode msg = com.shephertz.app42.gaming.multiplayer.client.SimpleJSON.JSON.Parse(eventObj.getMessage());
     }
 
     public void OnUserJoinRoom(RoomData eventObj, string _UserName)
@@ -183,81 +173,104 @@ public class SC_MultiplayerLogic : MonoBehaviour {
         }
     }
 
-    public void OnSendMoveAck()
-    {
-
+    public void statusStartGame()
+    { 
+        if (isOwner && myTurn)
+        {
+            SendPlayerMove(0, "OwnerReady");
+        }
+        else
+        {
+            if(myTurn)
+                SendPlayerMove(0, "Ready");
+        }
     }
 
     public void OnMoveCompleted(MoveEvent _Move)
     {
-        Debug.Log("Switch Turn " + " data " + _Move.getMoveData());
-
-       if(_Move.getMoveData() == "OwnerReady" && !isOwner)
-        {
-            //to do disapear screen
-            return;
-        }
-        if (_Move.getMoveData() == "Ready" && isOwner)
-        {
-            startGame();
-            return;
-        }
-
-
-       if(_Move.getMoveData() != "Ready" && _Move.getMoveData() != "OwnerReady")
-        {
             temp = JsonUtility.FromJson<msgJson>(_Move.getMoveData());
-            if (temp.msgSend == "shoot" && !myTurn)
+
+            if (temp.msgSend == "OwnerReady" && !isOwner)
             {
-                Debug.Log("---> index  " + temp.index);
-                bool isHit = checkedForHit(temp.index);
-                if (isHit)
+            //to do disapear screen
+                myTurn = true;
+                if (SC_Multyplayer_Globals.Instance.numberOfShips == 0)
+                    {
+                        statusStartGame();
+                        return;
+                    }
+                    
+            }
+            if (temp.msgSend == "Ready")
+            {
+                startGame();
+                return;
+            }
+
+            if (temp.msgSend == "shoot" && !myTurn){
+                string tempMsg;
+                isHit = checkedForHit(temp.index);
+            if (isHit)
                 {
                     SC_Multyplayer_Globals.Instance.mainBtnObjects["Main_Btn (" + temp.index + ")"].GetComponent<Image>().color = new Color(255, 0, 0, 255);
-                    temp.msgSend = "isHit";
+                    tempMsg = "isHit";
                     SC_Multyplayer_Globals.Instance.PlayerShips--;
                     if (SC_Multyplayer_Globals.Instance.PlayerShips == 0)
-                        temp.msgSend = "LOSE";
+                        tempMsg = "LOSE";
                 }
                 else
                 {
                     SC_Multyplayer_Globals.Instance.mainBtnObjects["Main_Btn (" + temp.index + ")"].GetComponent<Image>().color = new Color(113, 113, 113, 255);
-                    temp.msgSend = "miss";
+                    tempMsg = "miss";
                     
                 }
-                string jsonToSend = JsonUtility.ToJson(temp);
-                WarpClient.GetInstance().sendMove(jsonToSend, "");
+                SendPlayerMove(temp.index, tempMsg);
             }
 
             if(temp.msgSend == "isHit" && myTurn)
             {
+
                 SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + temp.index + ")"].GetComponent<Image>().color = new Color(255, 0, 0, 255);
-                temp.msgSend = "switchTurn";
-                string jsonToSend = JsonUtility.ToJson(temp);
-                WarpClient.GetInstance().sendMove(jsonToSend, "");
+                
+                SendPlayerMove(temp.index, "switchTurn");
             }
 
             if (temp.msgSend == "miss" && myTurn)
             {
-                SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + temp.index + ")"].GetComponent<Image>().color = new Color(113, 113, 113, 255);
-                temp.msgSend = "switchTurn";
-                string jsonToSend = JsonUtility.ToJson(temp);
-                WarpClient.GetInstance().sendMove(jsonToSend, "");
+
+                SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + temp.index + ")"].GetComponent<Image>().color = new Color(113, 113, 113, 255);          
+                SendPlayerMove(temp.index, "switchTurn");
             }
 
             if (temp.msgSend == "switchTurn")
             {
-                myTurn = !myTurn;
-                Debug.Log(myTurn);
+                if(myTurn == true)
+                {
+                    myTurn = false;
+                    SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Other Play Turn";
+                }
+                else
+                {
+                    myTurn = true;
+                    SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Your Turn";
+                 }        
             }
-        }
-
-     
-
-
-
     }
+
+
     //----------------------------------------------------------------------
+
+
+    public void SendPlayerMove(int index, string msg)
+    {
+        if (msg == null)
+            temp.msgSend = "Timeout";
+        else temp.msgSend = msg;
+        temp.index = index;
+        string jsonToSend = JsonUtility.ToJson(temp);
+        WarpClient.GetInstance().sendMove(jsonToSend, "");
+    }
+
     public bool checkedForHit(int index)
     {
         if(SC_Multyplayer_Globals.Instance.mainBtnObjects["Main_Btn (" + index + ")"].GetComponent<Image>().color == new Color(0, 255, 8, 255))
@@ -266,24 +279,21 @@ public class SC_MultiplayerLogic : MonoBehaviour {
         }
         return false;
     }
-    public void statusStartGame()
-    {
-        //WarpClient.GetInstance().sendMove("playerReady", "");
-       
-        if(isOwner)
-        {
-            WarpClient.GetInstance().sendMove("OwnerReady", "");
-        }
-        else
-        {
-            WarpClient.GetInstance().sendMove("Ready", "");
-        }
-    }
+    
 
     public void startGame()
     {
-        myTurn = true;
-        Debug.Log("**** Game Can Start bitches!!! *****");
+        if (isOwner)
+        {
+            myTurn = true;
+            SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Your Turn";
+        }
+        else {
+            myTurn = false;
+            SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Other Player Turn";
+        }
+        SC_Multyplayer_Globals.Instance.MultiplayerObjects["Panel_disableEnemyBoard"].SetActive(false);
+        Debug.Log("**** Let's Play *****");
     }
 
     //copy-paste from single player
@@ -327,8 +337,6 @@ public class SC_MultiplayerLogic : MonoBehaviour {
     {
         float screenWidth = (float)Screen.width / 1024;
         float screenHeight = (float)Screen.height / 768;
-        Debug.Log(screenHeight);
-        Debug.Log("the current button is " + currentButton);
         Vector3 tempHeight;
         switch (a)
         {
@@ -369,7 +377,6 @@ public class SC_MultiplayerLogic : MonoBehaviour {
                 }
                 break;
             case Multiplayer_Enums.Arrow.up:
-                Debug.Log(this.currentButton);
                 if (currentButton >= 10)
                 {
                     currentButton -= 10;
