@@ -8,14 +8,14 @@ using UnityEngine.UI;
 public class SC_Multiplayer_Controller : MonoBehaviour
 {
 
-    private int numberOfShips = 5;
+   
    // private bool whosTurn = true;       //True = player turn False = Computer Turn
     public GameObject gShip;
     void Update()
     {
-        if (Input.anyKeyDown & this.numberOfShips > 0)
+        if (Input.anyKeyDown & SC_Multyplayer_Globals.Instance.numberOfShips > 0)
         {
-            moveShip(this.numberOfShips);
+            moveShip(SC_Multyplayer_Globals.Instance.numberOfShips);
         }
      
     }
@@ -95,12 +95,12 @@ public class SC_Multiplayer_Controller : MonoBehaviour
             if (SC_MultiplayerLogic.Instance.isValidSlot(gShip))
             {
                 SC_MultiplayerLogic.Instance.moveShipVeritcal(gShip, Multiplayer_Enums.Arrow.enter);
-                numberOfShips--;
-                if (numberOfShips > 0)
+                SC_Multyplayer_Globals.Instance.numberOfShips--;
+                if (SC_Multyplayer_Globals.Instance.numberOfShips > 0)
                 {
-                    SC_Multyplayer_Globals.Instance.shipObjects["ship" + (5 - numberOfShips + 1)].SetActive(true);
+                    SC_Multyplayer_Globals.Instance.shipObjects["ship" + (5 - SC_Multyplayer_Globals.Instance.numberOfShips + 1)].SetActive(true);
                 }
-                switch (numberOfShips)
+                switch (SC_Multyplayer_Globals.Instance.numberOfShips)
                 {
                     case 4: SC_MultiplayerLogic.Instance.shipLength = 2; break;
                     case 3: SC_MultiplayerLogic.Instance.shipLength = 3; break;
@@ -109,7 +109,8 @@ public class SC_Multiplayer_Controller : MonoBehaviour
                     default: break;
                 }
             }
-            if (numberOfShips == 0) {
+            if (SC_Multyplayer_Globals.Instance.numberOfShips == 0) {
+                if(SC_MultiplayerLogic.Instance.myTurn)
                 SC_MultiplayerLogic.Instance.statusStartGame();
             }
              
