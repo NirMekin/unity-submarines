@@ -1,4 +1,5 @@
-﻿using System;
+﻿using com.shephertz.app42.gaming.multiplayer.client;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,6 @@ using UnityEngine.UI;
 
 public class SC_Multiplayer_Controller : MonoBehaviour
 {
-
-   
-   // private bool whosTurn = true;       //True = player turn False = Computer Turn
     public GameObject gShip;
     void Update()
     {
@@ -104,7 +102,9 @@ public class SC_Multiplayer_Controller : MonoBehaviour
                 }
             }
             if (SC_Multyplayer_Globals.Instance.numberOfShips == 0) {
-                if(SC_MultiplayerLogic.Instance.myTurn)
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["Text_Status"].GetComponent<Text>().text = "Locate Done !";
+                SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Be Ready To Play";
+                if (SC_MultiplayerLogic.Instance.myTurn)
                 SC_MultiplayerLogic.Instance.statusStartGame();
             }
              
@@ -114,9 +114,13 @@ public class SC_Multiplayer_Controller : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Scene_Multiplayer");
+        WarpClient.GetInstance().Disconnect();
+        SceneManager.LoadScene(2);
     }
-
+    public void Exit()
+    {
+        Application.LoadLevel(0);
+    }
 
 
 

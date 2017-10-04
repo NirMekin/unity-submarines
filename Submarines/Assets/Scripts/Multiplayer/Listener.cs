@@ -285,7 +285,11 @@ namespace AssemblyCSharp
 		
 		public void onUserLeftRoom (RoomData eventObj, string username)
 		{
-			Debug.Log ("onUserLeftRoom : " + username);
+            msgJson timeoutMsg = new msgJson();
+            timeoutMsg.msgSend = "Timeout";
+            string jsonToSend = JsonUtility.ToJson(timeoutMsg);
+            WarpClient.GetInstance().sendMove(jsonToSend, "");
+            Debug.Log ("onUserLeftRoom : " + username);
 		}
 		
 		public void onUserJoinedRoom (RoomData eventObj, string username)
@@ -296,7 +300,8 @@ namespace AssemblyCSharp
 		
 		public void onUserLeftLobby (LobbyData eventObj, string username)
 		{
-			Debug.Log ("onUserLeftLobby : " + username);
+            
+            Debug.Log ("onUserLeftLobby : " + username);
 		}
 		
 		public void onUserJoinedLobby (LobbyData eventObj, string username)
