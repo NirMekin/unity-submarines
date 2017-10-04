@@ -112,7 +112,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
                 {
                     Debug.Log("Found room for my level" + RoomLevel.roomLevel);
                     SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Locate Your Ships";
-                    WarpClient.GetInstance().startGame();
+                    //WarpClient.GetInstance().startGame();
                     rooms.Add(roomData.getId());
                 }
                
@@ -237,7 +237,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
 
             if (temp.msgSend == "miss" && myTurn)
             {
-
+                Debug.Log("miss");
                 SC_Multyplayer_Globals.Instance.EnemyBtnObjects["Enemy_Btn (" + temp.index + ")"].GetComponent<Image>().color = new Color(113, 113, 113, 255);          
                 SendPlayerMove(temp.index, "switchTurn");
             }
@@ -260,14 +260,14 @@ public class SC_MultiplayerLogic : MonoBehaviour {
 
     //----------------------------------------------------------------------
 
-
+    msgJson tempMSG = new msgJson();
     public void SendPlayerMove(int index, string msg)
     {
         if (msg == null)
-            temp.msgSend = "Timeout";
-        else temp.msgSend = msg;
-        temp.index = index;
-        string jsonToSend = JsonUtility.ToJson(temp);
+            tempMSG.msgSend = "Timeout";
+        else tempMSG.msgSend = msg;
+        tempMSG.index = index;
+        string jsonToSend = JsonUtility.ToJson(tempMSG);
         WarpClient.GetInstance().sendMove(jsonToSend, "");
     }
 
@@ -281,14 +281,15 @@ public class SC_MultiplayerLogic : MonoBehaviour {
     }
     
 
-    public void startGame()
-    {
-        if (isOwner)
+    public void startGame(){
+        Debug.Log("start game called");
+        if (isOwner == true)
         {
             myTurn = true;
             SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Your Turn";
         }
-        else {
+        else
+        {
             myTurn = false;
             SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Other Player Turn";
         }
@@ -308,6 +309,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
 
     public void EnemyBoard_Slot_Click(int _index)
     {
+        
         temp.index = _index;
         temp.msgSend = "shoot";
 

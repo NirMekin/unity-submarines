@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Submarines", "Assembly-CSharp.csproj", "{FDC452B5-53AB-1B75-2460-0EC3E60B5B1B}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Submarines", "Submarines.csproj", "{483B6F51-3CFF-4A7C-93BD-0B1CC3A521AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FDC452B5-53AB-1B75-2460-0EC3E60B5B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDC452B5-53AB-1B75-2460-0EC3E60B5B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDC452B5-53AB-1B75-2460-0EC3E60B5B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDC452B5-53AB-1B75-2460-0EC3E60B5B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{483B6F51-3CFF-4A7C-93BD-0B1CC3A521AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483B6F51-3CFF-4A7C-93BD-0B1CC3A521AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483B6F51-3CFF-4A7C-93BD-0B1CC3A521AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483B6F51-3CFF-4A7C-93BD-0B1CC3A521AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
