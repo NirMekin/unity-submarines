@@ -105,7 +105,7 @@ public class SC_Multiplayer_Controller : MonoBehaviour
                 SC_Multyplayer_Globals.Instance.MultiplayerObjects["Text_Status"].GetComponent<Text>().text = "Locate Done !";
                 SC_Multyplayer_Globals.Instance.MultiplayerObjects["logs"].GetComponent<Text>().text = "Be Ready To Play";
                 if (SC_MultiplayerLogic.Instance.myTurn)
-                SC_MultiplayerLogic.Instance.statusStartGame();
+                         SC_MultiplayerLogic.Instance.statusStartGame();
             }
              
             Debug.Log("enter key was pressed");

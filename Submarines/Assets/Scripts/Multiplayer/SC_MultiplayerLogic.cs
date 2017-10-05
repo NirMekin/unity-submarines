@@ -183,7 +183,7 @@ public class SC_MultiplayerLogic : MonoBehaviour {
             if (temp.msgSend == "OwnerReady" && !isOwner)
             { 
                 myTurn = true;
-                if (SC_Multyplayer_Globals.Instance.PlayerShips == 0)
+                if (SC_Multyplayer_Globals.Instance.numberOfShips == 0)
                 {
                     statusStartGame();
                     return;
